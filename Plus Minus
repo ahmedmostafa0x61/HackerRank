@@ -1,0 +1,36 @@
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+#
+# Complete the 'plusMinus' function below.
+#
+# The function accepts INTEGER_ARRAY arr as parameter.
+#
+
+def plusMinus(arr):
+    # Write your code here
+    arr_length = len(arr)
+    positive = sum(map(lambda item:item>0,arr))
+    negative = sum(map(lambda item:item<0,arr))
+    zero = sum(map(lambda item:item==0,arr))
+    
+    pos_ratio = round(positive/arr_length,6)
+    neg_ratio = round(negative/arr_length,6)
+    zero_ratio = round(zero/arr_length,6)
+    
+    print(pos_ratio)
+    print(neg_ratio)
+    print(zero_ratio)
+    
+
+if __name__ == '__main__':
+    n = int(input().strip())
+
+    arr = list(map(int, input().rstrip().split()))
+
+    plusMinus(arr)
